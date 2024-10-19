@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mycompany</groupId>
+    <artifactId>EJEMPLO-CRUD-MVC</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>20</maven.compiler.source> <!-- Java 20 -->
+        <maven.compiler.target>20</maven.compiler.target> <!-- Java 20 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- Dependencia de SQL Server JDBC Driver -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>10.2.1.jre17</version> <!-- Versión compatible con Java 17+ -->
+        </dependency>
+
+        <!-- Dependencia de Swing para interfaces gráficas (si es necesario) -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17.0.0.1</version> <!-- Versión compatible de JavaFX -->
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin para compilar con Maven usando Java 20 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>20</source> <!-- Usar Java 20 -->
+                    <target>20</target> <!-- Usar Java 20 -->
+                </configuration>
+            </plugin>
+
+            <!-- Plugin para ejecutar la clase principal -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.mycompany.ejemplo.crud.mvc.EJEMPLOCRUDMVC</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
